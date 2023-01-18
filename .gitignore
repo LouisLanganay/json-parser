@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# VSCODE
+.vscode/
+
+# Doxygen
+html/
+latex/
+doxygen-awesome-css/
+
+# Test files
+includes/
+src/
+assets/
+json/
