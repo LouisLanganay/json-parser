@@ -10,14 +10,23 @@ include Makefile_colors.mk
 NAME = libjp.a
 
 
-VPATH := ./reader
-VPATH += ./writer
+VPATH := reader
+VPATH += reader/utils
+VPATH += reader/loaders
 
 vpath %.c $(VPATH)
 
 SRC := main_reader.c
-SRC += main_writer.c
-
+SRC += my_strlen.c
+SRC += load_file_in_str.c
+SRC += json_parser_white_space.c
+SRC += json_parser_string.c
+SRC += json_parser_int.c
+SRC += json_parser_value.c
+SRC += json_parser_bool.c
+SRC += load_array.c
+SRC += load_object.c
+SRC += my_getnbr.c
 
 
 INC_DIR := ../../includes
