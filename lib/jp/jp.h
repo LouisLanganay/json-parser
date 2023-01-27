@@ -62,6 +62,7 @@
     parsed_data_t *json_parser(char *filepath);
     parsed_data_t *load_array(char **str);
     parsed_data_t *load_object(char **str);
+    parsed_data_t *json_parser_search(parsed_data_t *data, char *name);
 
 
 #endif

@@ -33,6 +33,13 @@ parsed_data_t *load_object(char **str)
             printf("Data_Value:\t %d\n", data->value.p_int);
         else if (data->type == p_bool)
             printf("Data_Value:\t %d\n", data->value.p_bool);
+        else if (data->type == p_obj) {
+            parsed_data_t *tmp = data->value.p_obj;
+            while (tmp->next) {
+                printf("Data_ValueAA:\t %i\n", tmp->value.p_int);
+                tmp = tmp->next;
+            }
+        }
         printf("\n");
         if (**str == '}')
             break;

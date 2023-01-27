@@ -13,6 +13,7 @@ NAME = libjp.a
 VPATH := reader
 VPATH += reader/utils
 VPATH += reader/loaders
+VPATH += reader/search
 
 vpath %.c $(VPATH)
 
@@ -24,6 +25,7 @@ SRC += json_parser_string.c
 SRC += json_parser_int.c
 SRC += json_parser_value.c
 SRC += json_parser_bool.c
+SRC += json_parser_search.c
 SRC += load_array.c
 SRC += load_object.c
 SRC += my_getnbr.c
