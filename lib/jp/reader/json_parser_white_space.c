@@ -9,6 +9,6 @@
 
 void json_parser_white_space(char **str)
 {
-    for (; (**str == ' ' || **str == '\t' || **str == '\n' || **str == '{') &&
+    for (; (**str == ' ' || **str == '\t' || **str == '\n') &&
         **str; *str += 1);
 }

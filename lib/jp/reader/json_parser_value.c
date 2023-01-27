@@ -12,6 +12,7 @@ void json_parser_value(char **str, parsed_data_t *data)
     *str += 1;
     json_parser_white_space(str);
     if (**str == '{') {
+        *str += 1;
         data->type = p_obj;
         data->value.p_obj = load_object(str);
         return;

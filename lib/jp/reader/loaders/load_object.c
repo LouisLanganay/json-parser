@@ -12,6 +12,9 @@ parsed_data_t *load_object(char **str)
     parsed_data_t *data = malloc(sizeof(parsed_data_t));
     parsed_data_t *tmp = data;
 
+    if (**str == '{')
+        *str += 1;
+
     for (; **str; *str += (**str == ',')) {
         data->next = NULL;
         json_parser_white_space(str);
@@ -28,8 +31,6 @@ parsed_data_t *load_object(char **str)
             printf("Data_Value:\t %s\n", data->value.p_str);
         else if (data->type == p_int)
             printf("Data_Value:\t %d\n", data->value.p_int);
-        else if (data->type == p_obj)
-            printf("Data_Value:\t %p\n", data->value.p_obj);
         else if (data->type == p_bool)
             printf("Data_Value:\t %d\n", data->value.p_bool);
         printf("\n");
