@@ -17,30 +17,15 @@ parsed_data_t *load_object(char **str)
 
     for (; **str; *str += (**str == ',')) {
         data->next = NULL;
-        json_parser_white_space(str);
+        jp_skipSpaces(str);
         if (**str == '}') {
             data->type = p_null;
             break;
         }
-        data->name = json_parser_string(str);
-        printf("Data_Name:\t %s\n", data->name);
-        json_parser_white_space(str);
+        data->name = jp_getValue_string(str);
+        jp_skipSpaces(str);
         for (; **str && **str != ':'; *str += 1);
-        json_parser_value(str, data);
-        if (data->type == p_str)
-            printf("Data_Value:\t %s\n", data->value.p_str);
-        else if (data->type == p_int)
-            printf("Data_Value:\t %d\n", data->value.p_int);
-        else if (data->type == p_bool)
-            printf("Data_Value:\t %d\n", data->value.p_bool);
-        else if (data->type == p_obj) {
-            parsed_data_t *tmp = data->value.p_obj;
-            while (tmp->next) {
-                printf("Data_ValueAA:\t %i\n", tmp->value.p_int);
-                tmp = tmp->next;
-            }
-        }
-        printf("\n");
+        jp_getValue(str, data);
         if (**str == '}')
             break;
         data->next = malloc(sizeof(parsed_data_t));

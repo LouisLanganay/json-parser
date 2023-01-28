@@ -14,18 +14,19 @@ VPATH := reader
 VPATH += reader/utils
 VPATH += reader/loaders
 VPATH += reader/search
+VPATH += reader/getValue
 
 vpath %.c $(VPATH)
 
 SRC := main_reader.c
 SRC += my_strlen.c
 SRC += load_file_in_str.c
-SRC += json_parser_white_space.c
-SRC += json_parser_string.c
-SRC += json_parser_int.c
-SRC += json_parser_value.c
-SRC += json_parser_bool.c
-SRC += json_parser_search.c
+SRC += jp_skipSpaces.c
+SRC += jp_getValue_string.c
+SRC += jp_getValue_int.c
+SRC += jp_getValue.c
+SRC += jp_getValue_bool.c
+SRC += jp_search.c
 SRC += load_array.c
 SRC += load_object.c
 SRC += my_getnbr.c

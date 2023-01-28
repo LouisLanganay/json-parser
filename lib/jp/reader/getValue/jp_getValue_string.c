@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** json_parser_string
+** jp_getValue_string
 */
 
-#include "../jp.h"
+#include "../../jp.h"
 
 static int data_name_length(char **str)
 {
@@ -17,7 +17,7 @@ static int data_name_length(char **str)
     return (j);
 }
 
-char *json_parser_string(char **str)
+char *jp_getValue_string(char **str)
 {
     int j = 0;
     int my_data_name_length = data_name_length(str);

@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** json_parser_int
+** jp_getValue_int
 */
 
-#include "../jp.h"
+#include "../../jp.h"
 
-void json_parser_int(char **str, parsed_data_t *data)
+void jp_getValue_int(char **str, parsed_data_t *data)
 {
     int nb = my_getnbr(*str);
     

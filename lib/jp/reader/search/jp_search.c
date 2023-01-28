@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** json_parser_search
+** jp_search
 */
 
 #include "../../jp.h"
@@ -31,7 +31,7 @@ static char *get_name(char *name)
     return (tmp);
 }
 
-parsed_data_t *json_parser_search(parsed_data_t *data, char *name)
+parsed_data_t *jp_search(parsed_data_t *data, char *name)
 {
     parsed_data_t *tmp = data;
     char *tmp_name = get_name(name);
@@ -41,7 +41,7 @@ parsed_data_t *json_parser_search(parsed_data_t *data, char *name)
             if (name[name_length(name)] == '\0')
                 return (tmp);
             else
-                return (json_parser_search(tmp->value.p_obj, name + name_length(name) + 1));
+                return (jp_search(tmp->value.p_obj, name + name_length(name) + 1));
         tmp = tmp->next;
     }
     return (NULL);

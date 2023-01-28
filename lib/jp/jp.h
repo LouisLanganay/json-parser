@@ -53,16 +53,16 @@
     int my_getnbr(char *str);
     int my_strlen(char const *str);
 
-    void json_parser_white_space(char **str);
-    void json_parser_int(char **str, parsed_data_t *data);
-    void json_parser_value(char **str, parsed_data_t *data);
-    void json_parser_bool(char **str, parsed_data_t *data);
-    char *json_parser_string(char **str);
+    void jp_skipSpaces(char **str);
+    void jp_getValue_int(char **str, parsed_data_t *data);
+    void jp_getValue(char **str, parsed_data_t *data);
+    void jp_getValue_bool(char **str, parsed_data_t *data);
+    char *jp_getValue_string(char **str);
 
     parsed_data_t *json_parser(char *filepath);
     parsed_data_t *load_array(char **str);
     parsed_data_t *load_object(char **str);
-    parsed_data_t *json_parser_search(parsed_data_t *data, char *name);
+    parsed_data_t *jp_search(parsed_data_t *data, char *name);
 
 
 #endif
