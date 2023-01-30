@@ -68,7 +68,7 @@ static parsed_data_t *jp_get_arr(parsed_data_t *data, char *name)
     for (int j = 0; j < name[i] - '0'; j++) {
         tmp = tmp->next;
     }
-    return (tmp);
+    return (tmp->value.p_obj);
 }
 
 parsed_data_t *jp_search(parsed_data_t *data, char *name)
