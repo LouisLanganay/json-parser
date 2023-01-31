@@ -60,7 +60,7 @@ static char *get_name_without_arr(char *str)
 static parsed_data_t *jp_get_arr(parsed_data_t *data, char *name)
 {
     int i = 0;
-    parsed_data_t *tmp = data->value.p_obj;
+    parsed_data_t *tmp = data->value.p_arr;
 
     while (name[i] != '[')
         i++;
@@ -68,7 +68,7 @@ static parsed_data_t *jp_get_arr(parsed_data_t *data, char *name)
     for (int j = 0; j < name[i] - '0'; j++) {
         tmp = tmp->next;
     }
-    return (tmp->value.p_obj);
+    return (tmp->value.p_arr);
 }
 
 parsed_data_t *jp_search(parsed_data_t *data, char *name)

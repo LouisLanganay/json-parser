@@ -12,6 +12,8 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <aio.h>
+    #include <unistd.h>
+    #include <fcntl.h>
 
     typedef struct parsed_data_s parsed_data_t;
 
@@ -29,6 +31,7 @@
             p_bool,
             p_str,
             p_obj,
+            p_arr,
             p_null
         } type_t;
     
@@ -37,6 +40,7 @@
             double p_float;
             char *p_str;
             bool_t p_bool;
+            parsed_data_t *p_arr;
             parsed_data_t *p_obj;
         } values_t;
         
@@ -51,6 +55,7 @@
 
     void load_file_in_str(char const *filepath, char **str);
     int my_getnbr(char *str);
+    int my_nbrlen(long int nb);
     int my_strlen(char const *str);
 
     void jp_skipSpaces(char **str);
@@ -64,5 +69,14 @@
     parsed_data_t *json_parser(char *filepath);
     parsed_data_t *jp_search(parsed_data_t *data, char *name);
 
+    void json_writer(char *filepath, parsed_data_t *object);
+    void jp_writeData(int fd, parsed_data_t *data, int tab_count);
+    void jp_writeStr(int fd, char *str);
+    void jp_writeInt(int fd, int nb);
+    void jp_writeBool(int fd, bool_t value);
+    void jp_writeTab(int fd, int tab_count);
+    void jp_writeArray(int fd, parsed_data_t *data, int tab_count);
+    void jp_writeData_name(int fd, parsed_data_t *data, int tab_count);
+    void jp_writeData_value(int fd, parsed_data_t *data, int tab_count);
 
 #endif

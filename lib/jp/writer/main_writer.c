@@ -9,7 +9,9 @@
 
 void json_writer(char *filepath, parsed_data_t *data)
 {
-    FILE *file = fopen(filepath, "w");
-    write_object(file, data);
-    fclose(file);
+    int fd = open(filepath, O_RDWR | O_CREAT | O_TRUNC);
+    if (fd == -1)
+        return;
+    jp_writeData(fd, data, 1);
+    close(fd);
 }

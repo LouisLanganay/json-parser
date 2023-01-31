@@ -18,8 +18,8 @@ void jp_getValue(char **str, parsed_data_t *data)
         return;
     }
     if (**str == '[') {
-        data->type = p_obj;
-        data->value.p_obj = load_array(str);
+        data->type = p_arr;
+        data->value.p_arr = load_array(str);
         return;
     }
     if (**str == '"') {

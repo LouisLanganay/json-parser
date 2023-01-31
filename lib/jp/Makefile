@@ -11,7 +11,9 @@ NAME = libjp.a
 
 
 VPATH := reader
-VPATH += reader/utils
+VPATH += utils
+VPATH += writer
+VPATH += writer/type
 VPATH += reader/loaders
 VPATH += reader/search
 VPATH += reader/getValue
@@ -20,6 +22,7 @@ vpath %.c $(VPATH)
 
 SRC := main_reader.c
 SRC += my_strlen.c
+SRC += my_nbrlen.c
 SRC += load_file_in_str.c
 SRC += jp_skipSpaces.c
 SRC += jp_getValue_string.c
@@ -30,6 +33,15 @@ SRC += jp_search.c
 SRC += load_array.c
 SRC += load_object.c
 SRC += my_getnbr.c
+SRC += main_writer.c
+SRC += jp_writeStr.c
+SRC += jp_writeData.c
+SRC += jp_writeData_name.c
+SRC += jp_writeData_value.c
+SRC += jp_writeInt.c
+SRC += jp_writeBool.c
+SRC += jp_writeTab.c
+SRC += jp_writeArray.c
 
 
 INC_DIR := ../../includes
