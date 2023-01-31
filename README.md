@@ -28,7 +28,7 @@ parsed_data_t *jp_search(parsed_data_t *data, char *name);
     "hp": 100,
     "alive": true,
     "pos": {
-        "x": 11110,
+        "x": 11110, // -- HERE --
         "y": 220
     },
     "inventory": {
@@ -59,7 +59,7 @@ int pos_x = jp_search(data, "pos.x")->value.p_int;
                 "id": 1,
                 "posibilities": [
                     "Hello!",
-                    "Bonjour aventurier !",
+                    "Bonjour aventurier !", // -- HERE --
                     "Salut à toi !"
                 ]
             },            
