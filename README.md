@@ -20,7 +20,7 @@ parsed_data_t *jp_search(parsed_data_t *data, char *name);
 
 ## Example
 
-# SEARCHER
+### SEARCHER
 
 ```json
 {
@@ -49,7 +49,7 @@ parsed_data_t *data = json_parser(JSON_FILE_PATH);
 int pos_x = jp_search(data, "pos.x")->value.p_int;
 ```
 
-# WRITER
+### WRITER
 
 ```json
 {
