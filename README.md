@@ -87,6 +87,14 @@ jp_write(JSON_FILE_PATH, data);
 
 ![JSON PARSER](https://user-images.githubusercontent.com/114762819/215821384-4724d72d-03c1-4236-b0bb-7018c87ac8fd.png)
 
+## How Json Work ?
+
+![1j](https://user-images.githubusercontent.com/114762819/215849382-1dcdd4a9-67f9-4c24-bf06-10ab50c954da.jpg)
+![2j](https://user-images.githubusercontent.com/114762819/215849416-41f305c0-a7cd-495b-b912-d2d4b12fe495.jpg)
+![3j](https://user-images.githubusercontent.com/114762819/215849429-8bbe2596-eef6-4a86-9e64-c369c4d9eaef.jpg)
+![4j](https://user-images.githubusercontent.com/114762819/215849437-9c5f2cf1-0544-4f60-b7d5-40d9f4b59a43.jpg)
+![5j](https://user-images.githubusercontent.com/114762819/215849443-0c1780a3-24d7-4431-8728-f941b1b0f8d3.jpg)
+![6j](https://user-images.githubusercontent.com/114762819/215849459-ceb38dd5-822e-4a93-bc26-288c6802dc6d.jpg)
 
 
 ## Authors
