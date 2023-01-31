@@ -49,7 +49,7 @@ int pos_x = jp_search(data, "pos.x")->value.p_int;
 
 ## parsed_data_t struct
 
-![JSON PARSER](https://user-images.githubusercontent.com/114762819/215335630-587f6a09-2bbf-414e-9ad8-80cd34dfaeba.png)
+![JSON PARSER](https://user-images.githubusercontent.com/114762819/215821384-4724d72d-03c1-4236-b0bb-7018c87ac8fd.png)
 
 
 
