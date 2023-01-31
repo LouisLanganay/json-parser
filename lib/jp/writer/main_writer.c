@@ -7,7 +7,7 @@
 
 #include "../jp.h"
 
-void json_writer(char *filepath, parsed_data_t *data)
+void jp_write(char *filepath, parsed_data_t *data)
 {
     int fd = open(filepath, O_RDWR | O_CREAT | O_TRUNC);
     if (fd == -1)

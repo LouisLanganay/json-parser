@@ -66,10 +66,10 @@
 
     parsed_data_t *load_array(char **str);
     parsed_data_t *load_object(char **str);
-    parsed_data_t *json_parser(char *filepath);
+    parsed_data_t *jp_parse(char *filepath);
     parsed_data_t *jp_search(parsed_data_t *data, char *name);
+    void jp_write(char *filepath, parsed_data_t *object);
 
-    void json_writer(char *filepath, parsed_data_t *object);
     void jp_writeData(int fd, parsed_data_t *data, int tab_count);
     void jp_writeStr(int fd, char *str);
     void jp_writeInt(int fd, int nb);

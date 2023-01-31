@@ -7,7 +7,7 @@
 
 #include "../jp.h"
 
-parsed_data_t *json_parser(char *filepath)
+parsed_data_t *jp_parse(char *filepath)
 {
     char *str;
     load_file_in_str(filepath, &str);

@@ -14,8 +14,9 @@ To compile this project run the following command at ``lib/jp``
 ## Usefull functions
 
 ```c
-parsed_data_t *json_parser(char *filepath);
+parsed_data_t *jp_parse(char *filepath);
 parsed_data_t *jp_search(parsed_data_t *data, char *name);
+void jp_write(char *filepath, parsed_data_t *object);
 ```
 
 ## Example
@@ -45,7 +46,7 @@ parsed_data_t *jp_search(parsed_data_t *data, char *name);
 
 If I want to acces to player pos_x:
 ```c
-parsed_data_t *data = json_parser(JSON_FILE_PATH);
+parsed_data_t *data = jp_parse(JSON_FILE_PATH);
 int pos_x = jp_search(data, "pos.x")->value.p_int;
 ```
 
@@ -76,9 +77,9 @@ int pos_x = jp_search(data, "pos.x")->value.p_int;
 
 If I want to modify second `posibility` of the first `dialogue` of `michel`:
 ```c
-parsed_data_t *data = json_parser(JSON_FILE_PATH);
+parsed_data_t *data = jp_parse(JSON_FILE_PATH);
 jp_search(data, "michel.dialogues[0].posibilities[0]")->value.p_str = "Bonjour grand aventurier !";
-json_writer(JSON_FILE_PATH, data);
+jp_write(JSON_FILE_PATH, data);
 ```
 
 
