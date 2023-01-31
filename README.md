@@ -20,6 +20,8 @@ parsed_data_t *jp_search(parsed_data_t *data, char *name);
 
 ## Example
 
+# SEARCHER
+
 ```json
 {
     "name": "Louis",
@@ -46,6 +48,39 @@ If I want to acces to player pos_x:
 parsed_data_t *data = json_parser(JSON_FILE_PATH);
 int pos_x = jp_search(data, "pos.x")->value.p_int;
 ```
+
+# WRITER
+
+```json
+{
+    "michel": {
+        "dialogues": [
+            {
+                "id": 1,
+                "posibilities": [
+                    "Hello!",
+                    "Bonjour aventurier !",
+                    "Salut à toi !"
+                ]
+            },            
+            {
+                "id": 2,
+                "posibilities": [
+                    "Merci"
+                ]
+            }
+        ]
+    }
+}
+```
+
+If I want to modify second `posibility` of the first `dialogue` of `michel`:
+```c
+parsed_data_t *data = json_parser(JSON_FILE_PATH);
+jp_search(data, "michel.dialogues[0].posibilities[0]")->value.p_str = "Bonjour grand aventurier !";
+json_writer(JSON_FILE_PATH, data);
+```
+
 
 ## parsed_data_t struct
 
