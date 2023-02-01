@@ -20,12 +20,12 @@ all: $(NAME) clean
 	
 
 $(NAME): $(SRC)
-	@ make -C ../lib/jp
+	@ mkdir -p ../includes
+	@ make re -C ../lib/jp
 	@ echo ${SRC} ${TESTS_FILES}
 	@ gcc -o ${NAME} ${SRC} ${TESTS_FILES} ${FLAGS}
 
 run_tests: $(NAME)
-	@ mkdir -p ../includes
 	@ ./$(NAME)
 	@ gcovr --xml > coverage.xml
 	
@@ -35,6 +35,7 @@ clean:
 	@ $(RM)	$(OBJ)
 
 fclean: clean
+	@ make fclean -C ../lib/jp
 	@ $(RM) -r $(BUILD_DIR)
 	@ $(RM)	$(NAME)
 	@ $(RM) coverage.xml
