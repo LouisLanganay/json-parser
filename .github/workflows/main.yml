@@ -1,0 +1,19 @@
+name: Workflow for Codecov
+on: [push, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: make run_tests
+      run: make run_tests -C ./tests
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+        files: ./tests/coverage.xml
+        flags: unit_tests # optional
+        name: codecov-umbrella # optional
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
+    - name: make fclean
+      run: make fclean -C ./tests
