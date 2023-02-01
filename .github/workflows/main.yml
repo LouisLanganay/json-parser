@@ -20,9 +20,8 @@ jobs:
       run: |
         genhtml coverage.info --output-directory out
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v1
       with:
-        gcov: true
         file: coverage.info
         token: ${{ secrets.CODECOV_TOKEN }}
     - name: Run fclean
