@@ -13,13 +13,5 @@ jobs:
         sudo apt-get install libcriterion-dev
         sudo apt-get install gcovr
     - name: Run tests
-      run: make run_tests -C ./tests
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-        files: ./tests/coverage.xml
-        flags: unit_tests # optional
-        name: codecov-umbrella # optional
-        fail_ci_if_error: true # optional (default = false)
-        verbose: true # optional (default = false)
-    - name: make fclean
-      run: make fclean -C ./tests
+      run: |
+        make run_tests -C ./tests
