@@ -15,3 +15,14 @@ jobs:
     - name: Run tests
       run: |
         make run_tests -C ./tests
+        lcov --directory . --capture --output-file coverage.info
+    - name: Generate coverage report
+      run: |
+        genhtml coverage.info --output-directory out
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        file: coverage.info
+        token: ${{ secrets.CODECOV_TOKEN }}
+    - name: Run fclean
+      run: make fclean -C ./tests

@@ -30,7 +30,7 @@ $(NAME): $(SRC)
 
 run_tests: $(NAME)
 	@ ./$(NAME)
-	@ gcovr --xml > coverage.xml
+	@ gcovr --exclude tests
 	@ echo -e "${_B_GREEN}[SUCCES]${_END} Run tests done"
 	
 clean:
