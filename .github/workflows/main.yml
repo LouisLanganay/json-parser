@@ -1,13 +1,19 @@
-name: Workflow for Codecov
+name: Coverage
 on: [push, pull_request]
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-    - name: make run_tests
-      run: make run_tests -C ./tests
     - uses: actions/checkout@master
     - uses: codecov/codecov-action@v3
+    - name: Install dependencies
+      run: |
+      sudo apt-get update
+      sudo apt-get install lcov
+      sudo apt-get install libcriterion-dev
+      sudo apt-get install gcovr
+    - name: Run tests
+      run: make run_tests -C ./tests
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         files: ./tests/coverage.xml
