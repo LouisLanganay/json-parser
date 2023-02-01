@@ -25,8 +25,9 @@ $(NAME): $(SRC)
 	@ gcc -o ${NAME} ${SRC} ${TESTS_FILES} ${FLAGS}
 
 run_tests: $(NAME)
-	./$(NAME)
-	gcovr --xml > coverage.xml
+	@ mkdir -p ../includes
+	@ ./$(NAME)
+	@ gcovr --xml > coverage.xml
 	
 clean:
 	@ $(RM) *.gcda
