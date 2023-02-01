@@ -20,7 +20,7 @@ jobs:
       run: |
         genhtml coverage.info --output-directory out
     - name: Upload coverage to Code cov
-      uses: codecov/codecov-action@v1
+      uses: codecov/codecov-action@v3
       with:
         file: coverage.info
         token: ${{ secrets.CODECOV_TOKEN }}
