@@ -64,4 +64,4 @@ includes/
 src/
 assets/
 json/
-Makefile
+Makefile.mk
