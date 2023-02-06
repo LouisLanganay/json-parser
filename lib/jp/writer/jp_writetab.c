@@ -2,13 +2,13 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** jp_writeTab
+** jp_writetab
 */
 
 #include "../jp.h"
 
-void jp_writeTab(int fd, int tab_count)
+void jp_writetab(int fd, int tab_count)
 {
     for (int i = 0; i < tab_count; i++)
-        jp_writeStr(fd, "\t");
+        jp_writestr(fd, "\t");
 }

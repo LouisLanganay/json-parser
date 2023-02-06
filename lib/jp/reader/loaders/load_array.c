@@ -13,9 +13,9 @@ parsed_data_t *load_array(char **str)
     parsed_data_t *tmp = data;
 
     for (; **str; *str += (**str == ',')) {
-        jp_getValue(str, data);
+        jp_getvalue(str, data);
         data->name = NULL;
-        jp_skipSpaces(str);
+        jp_skipspaces(str);
         if (**str == ']')
             break;
         data->next = malloc(sizeof(parsed_data_t));

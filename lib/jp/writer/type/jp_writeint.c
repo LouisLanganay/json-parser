@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** jp_writeInt
+** jp_writeint
 */
 
 #include "../../jp.h"
@@ -25,7 +25,7 @@ static char *my_int_to_str(int nb)
     return str;
 }
 
-void jp_writeInt(int fd, int nb)
+void jp_writeint(int fd, int nb)
 {
     char *str = my_int_to_str(nb);
     write(fd, str, my_strlen(str));

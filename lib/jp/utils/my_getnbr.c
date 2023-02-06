@@ -23,7 +23,8 @@ int my_getnbr(char *str)
     long int number = 0;
     int c = 0;
     int invert = invert_nb(str, &c);
-    for (int x = 0 + c; str[x] != ',' && str[x] != '\n' && str[x] != '}'; x++) {
+    for (int x = 0 + c; str[x] != ',' && str[x] != '\n' &&
+        str[x] != '}' && str[x] != '.'; x++) {
         if (str[x] >= '0' && str[x] <= '9'){
             number = (number * 10) + str[x] -'0';
         }

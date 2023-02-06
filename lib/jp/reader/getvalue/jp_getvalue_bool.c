@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2023
 ** json-parser
 ** File description:
-** jp_getValue_bool
+** jp_getvalue_bool
 */
 
 #include "../../jp.h"
 
-void jp_getValue_bool(char **str, parsed_data_t *data)
+void jp_getvalue_bool(char **str, parsed_data_t *data)
 {
     if (**str == 't') {
         data->type = p_bool;

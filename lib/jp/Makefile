@@ -16,32 +16,36 @@ VPATH += writer
 VPATH += writer/type
 VPATH += reader/loaders
 VPATH += reader/search
-VPATH += reader/getValue
+VPATH += reader/getvalue
 
 vpath %.c $(VPATH)
 
 SRC := main_reader.c
 SRC += my_strlen.c
 SRC += my_nbrlen.c
+SRC += my_strcmp.c
+SRC += my_getnbr_float.c
+SRC += my_compute_power_rec.c
 SRC += load_file_in_str.c
-SRC += jp_skipSpaces.c
-SRC += jp_getValue_string.c
-SRC += jp_getValue_int.c
-SRC += jp_getValue.c
-SRC += jp_getValue_bool.c
+SRC += jp_skipspaces.c
+SRC += jp_getvalue_string.c
+SRC += jp_getvalue_int.c
+SRC += jp_getvalue.c
+SRC += jp_getvalue_bool.c
 SRC += jp_search.c
+SRC += jp_search_tools.c
 SRC += load_array.c
 SRC += load_object.c
 SRC += my_getnbr.c
 SRC += main_writer.c
-SRC += jp_writeStr.c
-SRC += jp_writeData.c
-SRC += jp_writeData_name.c
-SRC += jp_writeData_value.c
-SRC += jp_writeInt.c
-SRC += jp_writeBool.c
-SRC += jp_writeTab.c
-SRC += jp_writeArray.c
+SRC += jp_writestr.c
+SRC += jp_writedata.c
+SRC += jp_writedata_name.c
+SRC += jp_writedata_value.c
+SRC += jp_writeint.c
+SRC += jp_writebool.c
+SRC += jp_writetab.c
+SRC += jp_writearray.c
 
 
 INC_DIR := ../../includes
