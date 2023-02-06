@@ -48,7 +48,7 @@ parsed_data_t *jp_search(parsed_data_t *data, char *name)
         char *tmp_name_arr = tmp_name;
         tmp_name = get_name_without_arr(tmp_name_arr);
     }
-    find_obj(tmp, tmp_name);
+    tmp = find_obj(tmp, tmp_name);
     if (name[name_len(name)] == '\0') {
         if (is_arr == 1)
             return (jp_get_arr(tmp, name));
