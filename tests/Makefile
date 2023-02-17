@@ -27,7 +27,8 @@ $(NAME): $(SRC)
 	@ gcc -o ${NAME} ${SRC} ${TESTS_FILES} ${FLAGS}
 	@ echo -e "${_B_GREEN}[SUCCES]${_END} Compilation done"
 
-run_tests: $(NAME)
+run_tests: fclean all
+	@ cp do_not_modify.json tests.json
 	@ ./$(NAME)
 	@ gcovr --exclude tests
 	@ echo -e "${_B_GREEN}[SUCCES]${_END} Run tests done"
