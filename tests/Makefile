@@ -19,7 +19,6 @@ FLAGS = --coverage -lcriterion -I${INC_DIR} -L${LIB_DIR} -l${LIB_NAME}
 
 all: $(NAME) clean
 	@ echo "Compilation done"
-	
 
 $(NAME): $(SRC)
 	@ mkdir -p ../includes
@@ -32,7 +31,7 @@ run_tests: $(NAME)
 	@ ./$(NAME)
 	@ gcovr --exclude tests
 	@ echo -e "${_B_GREEN}[SUCCES]${_END} Run tests done"
-	
+
 clean:
 	@ $(RM) *.gcda
 	@ $(RM) *.gcno
