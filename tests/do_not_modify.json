@@ -5,6 +5,8 @@
 		"x": 5632,
 		"y": 65131
 	},
+	"float": 24.68,
+	"float2": 42.0,
 	"alive": true,
 	"inventory": {
 		"items": [

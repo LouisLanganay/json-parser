@@ -96,3 +96,14 @@ Test(json_parser, Write_Simple_Int) {
     jp_write("tests.json", data);
     free(data);
 }
+
+Test(json_parser, Read_Float) {
+    parsed_data_t *data = jp_parse("tests.json");
+    float my_float = jp_search(data, "float")->value.p_float;
+    cr_assert(my_float == (float)24.68);
+
+    my_float = jp_search(data, "float2")->value.p_float;
+    cr_assert(my_float == (float)42.0);
+
+    free(data);
+}
