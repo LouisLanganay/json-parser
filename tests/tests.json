@@ -10,9 +10,8 @@
 	"alive": true,
 	"inventory": {
 		"items": [
-			1,
-			8,
-			9
+			42,
+			24
 		],
 		"bag": [
 			{

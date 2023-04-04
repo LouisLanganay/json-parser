@@ -107,3 +107,29 @@ Test(json_parser, Read_Float) {
 
     free(data);
 }
+
+Test(json_parser, Write_Int_Arr) {
+    parsed_data_t *data = jp_parse("tests.json");
+    int *new_arr = malloc(sizeof(int) * 2);
+
+    new_arr[0] = 42;
+    new_arr[1] = 24;
+
+    parsed_data_t *my_arr = malloc(sizeof(parsed_data_t));
+    my_arr->type = p_int;
+    my_arr->value.p_int = new_arr[0];
+    my_arr->next = malloc(sizeof(parsed_data_t));
+    my_arr->next->type = p_int;
+    my_arr->next->value.p_int = new_arr[1];
+    my_arr->next->next = NULL;
+
+    jp_search(data, "inventory.items")->value.p_arr = my_arr;
+    jp_write("tests.json", data);
+
+    data = jp_parse("tests.json");
+    int item1 = jp_search(data, "inventory.items[0]")->value.p_int;
+    int item2 = jp_search(data, "inventory.items[1]")->value.p_int;
+    cr_assert(item1 == 42);
+    cr_assert(item2 == 24);
+    free(data);
+}
